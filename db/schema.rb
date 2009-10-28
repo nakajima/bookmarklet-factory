@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(:version => 20091028031942) do
   create_table "bookmarklets", :force => true do |t|
     t.string   "name"
     t.text     "code"
+    t.integer  "count",      :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
