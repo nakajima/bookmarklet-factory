@@ -1,0 +1,12 @@
+Drag this to your Bookmarks Bar:
+<strong>
+  <a href="javascript:var%20d=document,z=d.createElement('scr'+'ipt'),b=d.body;try{if(!b)throw(0);z.setAttribute('src','<%= request.protocol + request.host + url_for(@bookmarklet) + '.js' %>');b.appendChild(z);}catch(e){alert('Please%20wait%20until%20the%20page%20has%20loaded.');}void(0)"><%= @bookmarklet.name %></a>
+</strong>
+
+<br>
+<br>
+<br>
+
+<p>
+  <a href="/">Click here to go home.</a>
+</p>

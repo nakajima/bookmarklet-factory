@@ -1,0 +1,22 @@
+<h1>Listing bookmarklets</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Code</th>
+  </tr>
+
+<% @bookmarklets.each do |bookmarklet| %>
+  <tr>
+    <td><%=h bookmarklet.name %></td>
+    <td><%=h bookmarklet.code %></td>
+    <td><%= link_to 'Show', bookmarklet %></td>
+    <td><%= link_to 'Edit', edit_bookmarklet_path(bookmarklet) %></td>
+    <td><%= link_to 'Destroy', bookmarklet, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New bookmarklet', new_bookmarklet_path %>

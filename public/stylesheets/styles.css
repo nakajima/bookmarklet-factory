@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: Helvetica;
+  font-size: 40px;
+  padding: 0.4em 1em;
+}
+
+h1 {
+  line-height: 0.9em;
+}
+
+a {
+  color: #449EEF;
+  text-decoration: none;
+  padding: 3px 5px;
+  margin-left: -3px;
+}
+
+a:hover {
+  background: #449EEF;
+  color: #fff;
+}
+
+form {
+  margin: 1em 7px;
+}
+
+label {
+  font-size: 14px;
+}
+
+input[type="text"] {
+  font-size: 32px;
+  width: 800px;
+  margin-bottom: 1em;
+}
+
+input[type="submit"] {
+  font-size: 32px;
+  margin-top: 1em;
+}
+
+textarea {
+  width: 800px;
+  font-family: Courier, monospace;
+}
+
+#main-title {
+  margin: 1em 0;
+}

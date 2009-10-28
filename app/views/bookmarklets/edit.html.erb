@@ -1,0 +1,20 @@
+<h1>Editing bookmarklet</h1>
+
+<% form_for(@bookmarklet) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :code %><br />
+    <%= f.text_area :code %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @bookmarklet %> |
+<%= link_to 'Back', bookmarklets_path %>
