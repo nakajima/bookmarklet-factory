@@ -25,6 +25,10 @@ a:hover {
   color: #fff;
 }
 
+a:active {
+  background: #4097e8;
+}
+
 form {
   margin: 1em 7px;
 }
