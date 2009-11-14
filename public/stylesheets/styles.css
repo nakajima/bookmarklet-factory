@@ -45,14 +45,26 @@ input[type="text"] {
 
 input[type="submit"] {
   font-size: 32px;
-  margin-top: 1em;
+  cursor: pointer;
 }
 
 textarea {
   width: 800px;
   font-family: Courier, monospace;
+  margin-bottom: 2em;
 }
 
 #main-title {
   margin: 1em 0;
+}
+
+#the-list {
+  padding: 4px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+blockquote {
+  margin: 20px 0;
+  color: #ccc;
 }

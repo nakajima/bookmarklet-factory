@@ -4,7 +4,12 @@ Drag this to your Bookmarks Bar:
 </strong>
 
 <br>
-<br>
+
+<blockquote><%= @bookmarklet.description %></blockquote>
+
+
+<%= link_to 'Click Here to Edit', edit_bookmarklet_path(@bookmarklet) if @bookmarklet.password? %>
+
 <br>
 
 <p>

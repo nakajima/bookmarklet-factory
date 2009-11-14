@@ -1,12 +1,8 @@
 class BookmarkletsController < ApplicationController
-  # GET /bookmarklets
-  # GET /bookmarklets.xml
   def index
-    redirect_to '/'
+    @bookmarklets = Bookmarklet.all
   end
 
-  # GET /bookmarklets/1
-  # GET /bookmarklets/1.xml
   def show
     @bookmarklet = Bookmarklet.find(params[:id])
 
@@ -20,20 +16,32 @@ class BookmarkletsController < ApplicationController
     end
   end
 
-  # GET /bookmarklets/new
-  # GET /bookmarklets/new.xml
   def new
     @bookmarklet = Bookmarklet.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @bookmarklet }
-    end
   end
 
-  # GET /bookmarklets/1/edit
   def edit
-    redirect_to Bookmarklet.find(params[:id])
+    if Array(session[:owns]).include?(params[:id])
+      @bookmarklet = Bookmarklet.find(params[:id])
+    else
+      redirect_to login_bookmarklet_path(params[:id])
+    end
+  end
+  
+  def login
+    @bookmarklet = Bookmarklet.find(params[:id])
+  end
+  
+  def authorize
+    @bookmarklet = Bookmarklet.find_by_id_and_password(params[:id], params[:password])
+    if @bookmarklet and @bookmarklet.password?
+      session[:owns] ||= []
+      session[:owns] << @bookmarklet.id.to_s
+      redirect_to edit_bookmarklet_path(@bookmarklet)
+    else
+      flash[:notice] = 'No dice. Try again.'
+      redirect_to :action => 'login'
+    end
   end
 
   # POST /bookmarklets
@@ -53,15 +61,30 @@ class BookmarkletsController < ApplicationController
     end
   end
 
-  # PUT /bookmarklets/1
-  # PUT /bookmarklets/1.xml
   def update
-    redirect_to Bookmarklet.find(params[:id])
+    if session[:owns].include?(params[:id])
+      @bookmarklet = Bookmarklet.find(params[:id])
+      if @bookmarklet.update_attributes(params[:bookmarklet])
+        flash[:notice] = 'Success!'
+        redirect_to @bookmarklet
+      else
+        edit_bookmarklet_path(@bookmarklet)
+      end
+    else
+      flash[:notice] = 'No dice. Try again.'
+      redirect_to :action => 'login'
+    end
   end
 
   # DELETE /bookmarklets/1
   # DELETE /bookmarklets/1.xml
   def destroy
     redirect_to Bookmarklet.find(params[:id])
+  end
+  
+  private
+  
+  def login_required
+    
   end
 end

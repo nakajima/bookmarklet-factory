@@ -1,0 +1,10 @@
+<html>
+  <head>
+    <title>BOOKMARKLIT</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css" type="text/css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+    <h1 id="main-title">Bookmarklet Factory</h1>
+    <a href="/bookmarklets/new">Click Here to Create One.</a>
+  </body>
+</html>

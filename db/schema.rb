@@ -9,14 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091028031942) do
+ActiveRecord::Schema.define(:version => 20091114003903) do
 
   create_table "bookmarklets", :force => true do |t|
     t.string   "name"
     t.text     "code"
-    t.integer  "count",      :default => 0
+    t.integer  "count",       :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "description"
+    t.string   "password"
   end
 
 end

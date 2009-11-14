@@ -7,12 +7,24 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </p>
+  
+  <p>
+    <%= f.label :password, 'Password (optional, but required to edit)' %><br />
+    <%= f.text_field :password %>
+  </p>
+  
   <p>
     <%= f.label :code %><br />
     <%= f.text_area :code %>
   </p>
+  
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.label :description, 'Description (optional)' %><br />
+    <%= f.text_area :description %>
+  </p>
+  
+  <p>
+    <%= f.submit 'Update Bookmarklet' %>
   </p>
 <% end %>
 

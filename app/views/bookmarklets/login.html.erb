@@ -1,0 +1,8 @@
+<% form_tag authorize_bookmarklet_path(@bookmarklet), :method => :post do %>
+  Enter the password for <%= @bookmarklet.name %>:<br>
+  <%= text_field_tag :password %>
+  <%= submit_tag 'Authorize' %>
+<% end %>
+
+<%= link_to 'Back', @bookmarklet %>
+
