@@ -12,7 +12,6 @@ class BookmarkletsController < ApplicationController
         @bookmarklet.increment! :count
         render :js => @bookmarklet.code
       end
-      format.xml  { render :xml => @bookmarklet }
     end
   end
 
