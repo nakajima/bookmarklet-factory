@@ -7,6 +7,13 @@ Drag this to your Bookmarks Bar:
 
 <blockquote><%= @bookmarklet.description %></blockquote>
 
+<%= link_to_function 'View Source', '$("source").toggle()'  %>
+
+<div id="source" style="display:none">
+  <pre><%= CGI.escapeHTML(@bookmarklet.code) %></pre>
+</div>
+
+<br>
 
 <%= link_to 'Click Here to Edit', edit_bookmarklet_path(@bookmarklet) if @bookmarklet.password? %>
 

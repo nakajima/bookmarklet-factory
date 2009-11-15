@@ -58,6 +58,11 @@ textarea {
   margin: 1em 0;
 }
 
+#source {
+  font-size: 14px;
+  padding: 1em;
+}
+
 #the-list {
   padding: 4px;
   margin-top: 20px;
