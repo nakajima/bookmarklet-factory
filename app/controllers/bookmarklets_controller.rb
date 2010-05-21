@@ -1,6 +1,6 @@
 class BookmarkletsController < ApplicationController
   def index
-    @bookmarklets = Bookmarklet.all(:order => 'created_at DESC')
+    @bookmarklets = Bookmarklet.all(:order => 'count DESC')
   end
 
   def show
