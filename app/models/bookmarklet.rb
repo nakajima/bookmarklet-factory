@@ -3,8 +3,10 @@ class Bookmarklet < ActiveRecord::Base
   validates_presence_of :code
   validate :spam_check, :if => :spam?
 
+  attr_accessor :body # This is for spam detection
+
   def spam?
-    SpamChecker.new(code).spam?
+    @body || SpamChecker.new(code).spam?
   end
 
   private
