@@ -1,3 +1,5 @@
+<% title @bookmarklet.name %>
+
 Drag this to your Bookmarks Bar:
 <strong>
   <a href="javascript:var%20d=document,z=d.createElement('scr'+'ipt'),b=d.body;try{if(!b)throw(0);z.setAttribute('src','<%= request.protocol + request.host + url_for(@bookmarklet) + '.js' %>');b.appendChild(z);}catch(e){alert('Please%20wait%20until%20the%20page%20has%20loaded.');}void(0)"><%= @bookmarklet.name %></a>
@@ -5,12 +7,12 @@ Drag this to your Bookmarks Bar:
 
 <br>
 
-<blockquote><%= @bookmarklet.description %></blockquote>
+<blockquote><%= h(@bookmarklet.description) %></blockquote>
 
 <%= link_to_function 'View Source', '$("source").toggle()'  %>
 
 <div id="source" style="display:none">
-  <pre><%= CGI.escapeHTML(@bookmarklet.code) %></pre>
+  <pre><%= h(@bookmarklet.code) %></pre>
 </div>
 
 <br>

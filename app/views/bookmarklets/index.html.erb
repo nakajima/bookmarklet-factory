@@ -1,9 +1,11 @@
+<% title "All of ’em" %>
+
 <h1 id="main-title">Bookmarklet Factory</h1>
 <%= link_to 'Click Here to Create One.', new_bookmarklet_path, :id => 'new-link' %>
 
 <div id="the-list">
   Or View Existing: 
   <%- @bookmarklets.each do |bookmarklet| -%>
-    <%= link_to bookmarklet.name, bookmarklet %>
+    <%= link_to h(bookmarklet.name), bookmarklet %>
   <%- end -%>
 </div>
