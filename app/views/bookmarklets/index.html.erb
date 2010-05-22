@@ -1,7 +1,10 @@
 <% title "All of ’em" %>
 
-<h1 id="main-title">Bookmarklet Factory</h1>
-<%= link_to 'Click Here to Create One.', new_bookmarklet_path, :id => 'new-link' %>
+<h1 id="main-title">Bookmarklet<br>Factory</h1>
+
+<div id="new-link">
+  <%= link_to 'Click Here to Create One.', new_bookmarklet_path %>
+</div>
 
 <div id="the-list">
   Or View Existing: 

@@ -55,7 +55,13 @@ textarea {
 }
 
 #main-title {
-  margin: 1em 0;
+  margin: 1em 0 0.4em;
+}
+
+#new-link {
+  float: left;
+  display: block;
+  width: 50%;
 }
 
 #source {
@@ -65,9 +71,15 @@ textarea {
 
 #the-list {
   padding: 4px;
-  margin-top: 20px;
+  margin-top: 0px;
   font-size: 14px;
   line-height: 1.6em;
+  width: 40%;
+  float: left;
+}
+
+#the-list a {
+  display: inline-block;
 }
 
 blockquote {
