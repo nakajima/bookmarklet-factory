@@ -98,7 +98,7 @@ textarea {
 }
 
 #about:active {
-  text-decoration: underline;
+  background: #4097e8;
 }
 
 blockquote {
