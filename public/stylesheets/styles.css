@@ -82,6 +82,12 @@ textarea {
   display: inline-block;
 }
 
+#about {
+  font-size: 14px;
+  margin-left: 5px;
+  margin-top: 110px;
+}
+
 blockquote {
   margin: 20px 0;
   color: #ccc;
