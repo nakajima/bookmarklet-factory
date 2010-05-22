@@ -3,7 +3,7 @@ class Bookmarklet < ActiveRecord::Base
   validates_presence_of :code
   validate :spam_check, :if => :spam?
 
-  before_create :highlight_code!, :if => :code?
+  before_save :highlight_code!, :if => :code?
 
   attr_accessor :body # This is for spam detection
 
