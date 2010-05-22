@@ -9,17 +9,15 @@ Drag this to your Bookmarks Bar:
 
 <blockquote><%= h(@bookmarklet.description) %></blockquote>
 
-<%= link_to_function 'View Source', '$("source").toggle()'  %>
+<%= link_to_function 'View Source', 'showTheCodes(); return false'  %>
 
-<div id="source" style="display:none">
-  <pre><%= h(@bookmarklet.code) %></pre>
+<div id="source" style="display:none;">
+  <pre><%= @bookmarklet.highlighted_code %></pre>
 </div>
 
-<br>
-
-<%= link_to 'Click Here to Edit', edit_bookmarklet_path(@bookmarklet) if @bookmarklet.password? %>
-
-<br>
+<%- if @bookmarklet.password? -%>
+  <p><%= link_to 'Click Here to Edit', edit_bookmarklet_path(@bookmarklet) %></p>
+<%- end -%>
 
 <p>
   <a href="/">Click here to go home.</a>
