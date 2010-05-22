@@ -10,7 +10,7 @@ class BookmarkletsController < ApplicationController
       format.html # show.html.erb
       format.js   do
         @bookmarklet.increment! :count
-        render :js => @bookmarklet.code
+        render :js => JsMin.minify(@bookmarklet.code).strip
       end
     end
   end
