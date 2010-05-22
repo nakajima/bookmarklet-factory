@@ -82,23 +82,28 @@ textarea {
   display: inline-block;
 }
 
-#about {
+.about {
   position: absolute;
   top: 0px;
   right: 0px;
   font-size: 12px;
-  padding: 2px 4px;
+  padding: 2px 6px;
   background: #000;
   color: #fff;
+  line-height: 20px;
 }
 
-#about:hover {
+.about:hover {
   background: #0af;
   color: #fff;
 }
 
-#about:active {
+.about:active {
   background: #4097e8;
+}
+
+.about.github {
+  top: 2.1em;
 }
 
 blockquote {
