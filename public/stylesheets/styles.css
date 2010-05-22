@@ -84,7 +84,7 @@ textarea {
 
 .about {
   position: absolute;
-  top: 0px;
+  top: 2px;
   right: 0px;
   font-size: 12px;
   padding: 2px 6px;
@@ -103,7 +103,7 @@ textarea {
 }
 
 .about.github {
-  top: 2.1em;
+  top: 28px;
 }
 
 blockquote {
