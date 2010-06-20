@@ -29,10 +29,15 @@
     </p>
   </div>
 
-  <p id="inject-label">
-    <%= f.check_box :jquery %>
+  <div id="inject-label">
+    <%= f.check_box :jquery, :onchange => '$("jquery-warning").toggle()' %>
     <%= f.label :jquery, 'Inject jQuery <span>Allows you to use jQuery in your bookmarklet, even if it is not loaded on the page.', :id => 'inject-label' %>
-  </p>
+    <p id="jquery-warning" style="display:none;">
+      jQuery will automatically be set to <code>noConflict</code> mode,
+      meaning any references to <code>$</code> must be replaced by
+      <code>jQuery</code>.
+    </p>
+  </div>
 
   <p class="last">
     <%= f.submit 'Create Bookmarklet', :disable_with => "Creating Bookmarklet..." %> or <%= link_to 'Back', bookmarklets_path %>

@@ -60,7 +60,7 @@ input[type="checkbox"] {
 textarea {
   width: 800px;
   height: 100px;
-  font-family: Bitstream Vera Sans Mono, Courier, monospace;
+  font-family: Bitstream Vera Sans Mono, Monaco, Courier, monospace;
   margin-bottom: 2em;
   padding: 10px;
   font-size: 14px;
@@ -72,6 +72,19 @@ textarea {
 
 #inject-label span {
   color: #aaa;
+}
+
+#jquery-warning {
+  background: #ffc;
+  padding: 6px;
+  width: 810px;
+  margin-top: 10px;
+  border: 1px solid #fc0;
+}
+
+#jquery-warning code {
+  font-family: Bitstream Vera Sans Mono, Monaco, Courier, monospace;
+  background: #ffe;
 }
 
 #info p {

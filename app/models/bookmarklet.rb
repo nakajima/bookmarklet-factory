@@ -23,6 +23,7 @@ class Bookmarklet < ActiveRecord::Base
 
       wrapped_code = <<-JS
         window.setTimeout(function() {
+          jQuery.noConflict();
           #{self[:code]}
         }, 10);
       JS
