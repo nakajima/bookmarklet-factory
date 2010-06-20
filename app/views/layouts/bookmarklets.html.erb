@@ -13,7 +13,9 @@
 </head>
 <body>
 
-<p style="color: green"><%= flash[:notice] %></p>
+<% if flash.has_key?(:notice) %>
+  <p class="flash"><%= flash[:notice] %></p>
+<% end %>
 
 <%= yield %>
 

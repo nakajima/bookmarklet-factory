@@ -60,10 +60,10 @@ input[type="checkbox"] {
 textarea {
   width: 800px;
   height: 100px;
-  font-family: Courier, monospace;
+  font-family: Bitstream Vera Sans Mono, Courier, monospace;
   margin-bottom: 2em;
   padding: 10px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 #inject-label {
@@ -144,6 +144,17 @@ textarea {
 form p.last {
   margin-top: 20px;
   font-size: 16px;
+}
+
+form p.last a:hover {
+  background: white;
+  color: #0af;
+}
+
+.flash {
+  background: #ffc;
+  margin-bottom: 20px;
+  padding: 10px;
 }
 
 blockquote {

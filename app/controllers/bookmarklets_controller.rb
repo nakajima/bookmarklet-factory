@@ -26,11 +26,11 @@ class BookmarkletsController < ApplicationController
       redirect_to login_bookmarklet_path(params[:id])
     end
   end
-  
+
   def login
     @bookmarklet = Bookmarklet.find(params[:id])
   end
-  
+
   def authorize
     @bookmarklet = Bookmarklet.find_by_id_and_password(params[:id], params[:password])
     if @bookmarklet and @bookmarklet.password?
@@ -50,7 +50,7 @@ class BookmarkletsController < ApplicationController
 
     respond_to do |format|
       if @bookmarklet.save
-        flash[:notice] = 'Bookmarklet was successfully created.'
+        flash[:notice] = 'Your bookmarklet was successfully created!'
         format.html { redirect_to(@bookmarklet) }
         format.xml  { render :xml => @bookmarklet, :status => :created, :location => @bookmarklet }
       else
@@ -64,7 +64,7 @@ class BookmarkletsController < ApplicationController
     if session[:owns].include?(params[:id])
       @bookmarklet = Bookmarklet.find(params[:id])
       if @bookmarklet.update_attributes(params[:bookmarklet])
-        flash[:notice] = 'Success!'
+        flash[:notice] = 'Your bookmark was saved!'
         redirect_to @bookmarklet
       else
         edit_bookmarklet_path(@bookmarklet)
@@ -80,10 +80,10 @@ class BookmarkletsController < ApplicationController
   def destroy
     redirect_to Bookmarklet.find(params[:id])
   end
-  
+
   private
-  
+
   def login_required
-    
+
   end
 end
