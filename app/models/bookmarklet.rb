@@ -20,7 +20,14 @@ class Bookmarklet < ActiveRecord::Base
         document.getElementsByTagName('head')[0].appendChild(_jq);
       JS
       jquery.gsub!(/^\s*/, '')
-      [jquery, self[:code]].join("\n")
+
+      wrapped_code = <<-JS
+        window.setTimeout(function() {
+          #{self[:code]}
+        }, 10);
+      JS
+
+      [jquery, wrapped_code].join("\n")
     else
       self[:code]
     end
