@@ -47,7 +47,6 @@ class BookmarkletsController < ApplicationController
   # POST /bookmarklets.xml
   def create
     @bookmarklet = Bookmarklet.new(params[:bookmarklet])
-
     respond_to do |format|
       if @bookmarklet.save
         flash[:notice] = 'Your bookmarklet was successfully created!'

@@ -12,6 +12,10 @@ class Bookmarklet < ActiveRecord::Base
   end
 
   def code
+    self[:code]
+  end
+
+  def code_with_jquery
     if jquery?
       jquery = <<-JS
         var _jq = document.createElement('script');
@@ -24,15 +28,16 @@ class Bookmarklet < ActiveRecord::Base
       wrapped_code = <<-JS
         window.setTimeout(function() {
           jQuery.noConflict();
-          #{self[:code]}
+          #{code_without_jquery}
         }, 10);
       JS
 
       [jquery, wrapped_code].join("\n")
     else
-      self[:code]
+      code_without_jquery
     end
   end
+  alias_method_chain :code, :jquery
 
   def highlighted_code
     self[:highlighted_code] || begin
