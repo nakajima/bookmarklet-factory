@@ -1,6 +1,6 @@
 class Bookmarklet < ActiveRecord::Base
   validates_presence_of :name
-  validates_presence_of :code_without_jquery
+  validates_presence_of :code_without_jquery, :message => "^Code can't be blank"
   validate :spam_check, :if => :spam?
 
   before_save :highlight_code!, :if => :code?
