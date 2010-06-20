@@ -9,17 +9,18 @@ Drag this to your Bookmarks Bar:
 
 <blockquote>
 <%= h(@bookmarklet.description) %>
-<% if @bookmarklet.jquery? %>
-  <small id="uses-jquery">Includes jQuery</small>
-<% end %>
 </blockquote>
 
-
-
-<%= link_to_function 'View Source', 'showTheCodes(); return false'  %>
+<% link_to '#', :onclick => 'toggleTheCodes(); return false;' do %>
+  View Source
+  <% if @bookmarklet.jquery? %>
+    <small id="uses-jquery">Includes jQuery</small>
+  <% end %>
+<% end %>
 
 <div id="source" style="display:none;">
   <pre><%= @bookmarklet.highlighted_code %></pre>
+  <%= link_to_function 'Hide', 'hideTheCodes(); return false;' %>
 </div>
 
 <%- if @bookmarklet.password? -%>

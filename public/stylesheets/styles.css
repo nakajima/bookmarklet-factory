@@ -18,6 +18,9 @@ a {
   text-decoration: none;
   padding: 3px 5px;
   margin-left: -3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 
 a:hover {
@@ -35,12 +38,13 @@ form {
 
 label {
   font-size: 14px;
+  cursor: pointer;
 }
 
 input[type="text"] {
-  font-size: 32px;
-  width: 800px;
+  font-size: 18px;
   margin-bottom: 1em;
+  padding: 5px;
 }
 
 input[type="submit"] {
@@ -48,13 +52,41 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+input[type="checkbox"] {
+  height: 15px;
+  width: 15px;
+}
+
 textarea {
   width: 800px;
-  height: 200px;
+  height: 100px;
   font-family: Courier, monospace;
   margin-bottom: 2em;
   padding: 10px;
   font-size: 16px;
+}
+
+#inject-label {
+  font-size: 16px;
+}
+
+#inject-label span {
+  color: #aaa;
+}
+
+#info p {
+  width: 400px;
+  float: left;
+  margin-right: 20px;
+}
+
+#info p input[type="text"] {
+  width: 390px;
+}
+
+#code-and-description {
+  clear: both;
+  margin-bottom: -10px;
 }
 
 #main-title {
@@ -109,22 +141,26 @@ textarea {
   top: 28px;
 }
 
+form p.last {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
 blockquote {
   margin: 20px 0;
   color: #ccc;
 }
 
-blockquote small {
+a small {
   font-size: 16px;
   background: #ffa;
   padding: 4px 8px;
   color: #111;
   margin-right: 10px;
-  margin-top: 0.6em;
+  margin-top: 0.7em;
   display: inline-block;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  float: left;
-  vertical-align: baseline;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  vertical-align: top;
 }

@@ -5,35 +5,36 @@
 <% form_for(@bookmarklet) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
+  <div id="info">
+    <p>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </p>
 
-  <p>
-    <%= f.label :password, 'Password (optional, but required to edit)' %><br />
-    <%= f.text_field :password %>
-  </p>
+    <p>
+      <%= f.label :password, 'Password (optional, but required to edit)' %><br />
+      <%= f.text_field :password %>
+    </p>
+  </div>
 
-  <p>
-    <%= f.label :code %><br />
-    <%= f.text_area :code %>
-  </p>
+  <div id="code-and-description">
+    <p>
+      <%= f.label :code %><br />
+      <%= f.text_area :code %>
+    </p>
 
-  <p>
-    <%= f.label :description, 'Description (optional)' %><br />
-    <%= f.text_area :description %>
-  </p>
+    <p>
+      <%= f.label :description, 'Description (optional)' %><br />
+      <%= f.text_area :description %>
+    </p>
+  </div>
 
-  <p style="display: inline-block; margin-right: 550px; margin-top: 0">
+  <p id="inject-label">
     <%= f.check_box :jquery %>
-    <%= f.label :jquery, 'Inject jQuery' %>
+    <%= f.label :jquery, 'Inject jQuery <span>Allows you to use jQuery in your bookmarklet, even if it is not loaded on the page.', :id => 'inject-label' %>
   </p>
 
-  <p style="display: inline-block">
-    <%= f.submit 'Create Bookmarklet' %>
+  <p class="last">
+    <%= f.submit 'Create Bookmarklet' %> or <%= link_to 'Back', @bookmarklet %>
   </p>
 <% end %>
-
-<%= link_to 'Show', @bookmarklet %> |
-<%= link_to 'Back', bookmarklets_path %>
