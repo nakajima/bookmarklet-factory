@@ -7,7 +7,14 @@ Drag this to your Bookmarks Bar:
 
 <br>
 
-<blockquote><%= h(@bookmarklet.description) %></blockquote>
+<blockquote>
+<%= h(@bookmarklet.description) %>
+<% if @bookmarklet.jquery? %>
+  <small id="uses-jquery">Includes jQuery</small>
+<% end %>
+</blockquote>
+
+
 
 <%= link_to_function 'View Source', 'showTheCodes(); return false'  %>
 

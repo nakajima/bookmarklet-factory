@@ -25,6 +25,15 @@
     <%= f.text_area :description %>
   </p>
 
+  <p style="display: inline-block; margin-right: 550px; margin-top: 0">
+    <%= f.check_box :jquery %>
+    <%= f.label :jquery, 'Inject jQuery' %>
+  </p>
+
+  <p style="display: inline-block">
+    <%= f.submit 'Create Bookmarklet' %>
+  </p>
+
   <p class="required">
     <%= f.label :body, "body" %>
     <%= f.text_area :body %>
@@ -35,10 +44,6 @@
       $$('p.required').invoke('hide'); // spam protection
     });
   </script>
-
-  <p>
-    <%= f.submit 'Create Bookmarklet' %>
-  </p>
 <% end %>
 
 <%= link_to 'Back', bookmarklets_path %>

@@ -11,6 +11,21 @@ class Bookmarklet < ActiveRecord::Base
     @body.present? || SpamChecker.new(code).spam?
   end
 
+  def code
+    if jquery?
+      jquery = <<-JS
+        var _jq = document.createElement('script');
+        _jq.src = 'http://code.jquery.com/jquery.js';
+        _jq.type = 'text/javascript';
+        document.getElementsByTagName('head')[0].appendChild(_jq);
+      JS
+      jquery.gsub!(/^\s*/, '')
+      [jquery, self[:code]].join("\n")
+    else
+      self[:code]
+    end
+  end
+
   def highlighted_code
     self[:highlighted_code] || begin
       highlight_code!
@@ -26,7 +41,7 @@ class Bookmarklet < ActiveRecord::Base
   def highlight_code!
     self.highlighted_code = Net::HTTP.post_form(URI.parse('http://pygments.appspot.com/'), {
       'lang' => 'javascript',
-      'code' => code
+      'code' => self[:code]
     }).body
   end
 

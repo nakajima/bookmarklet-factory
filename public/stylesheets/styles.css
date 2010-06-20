@@ -50,8 +50,11 @@ input[type="submit"] {
 
 textarea {
   width: 800px;
+  height: 200px;
   font-family: Courier, monospace;
   margin-bottom: 2em;
+  padding: 10px;
+  font-size: 16px;
 }
 
 #main-title {
@@ -109,4 +112,19 @@ textarea {
 blockquote {
   margin: 20px 0;
   color: #ccc;
+}
+
+blockquote small {
+  font-size: 16px;
+  background: #ffa;
+  padding: 4px 8px;
+  color: #111;
+  margin-right: 10px;
+  margin-top: 0.6em;
+  display: inline-block;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  float: left;
+  vertical-align: baseline;
 }
