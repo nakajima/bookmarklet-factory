@@ -32,7 +32,7 @@
   <div id="inject-label">
     <%= f.check_box :jquery, :onchange => '$("jquery-warning").toggle()' %>
     <%= f.label :jquery, 'Inject jQuery <span>Allows you to use jQuery in your bookmarklet, even if it is not loaded on the page.', :id => 'inject-label' %>
-    <p id="jquery-warning" style="display:none;">
+    <p id="jquery-warning" style="display:<%= @bookmarklet.jquery? ? 'block' : 'none' %>;">
       jQuery will automatically be set to <code>noConflict</code> mode,
       meaning any references to <code>$</code> must be replaced by
       <code>jQuery</code>.
