@@ -35,3 +35,8 @@ function toggleTheCodes() {
     showTheCodes();
   }
 }
+
+function dismissFlash() {
+  $$('.flash')[0].wrap('div').slideUp({ duration: 0.2 })
+  return false;
+}

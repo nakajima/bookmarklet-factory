@@ -168,6 +168,7 @@ form p.last a:hover {
   background: #ffc;
   margin-bottom: 20px;
   padding: 10px;
+  cursor: pointer;
 }
 
 blockquote {
