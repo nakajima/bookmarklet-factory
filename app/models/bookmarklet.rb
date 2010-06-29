@@ -7,6 +7,8 @@ class Bookmarklet < ActiveRecord::Base
 
   attr_accessor :body # This is for spam detection
 
+  named_scope :public, { :conditions => { :private => false } }
+
   def spam?
     @body.present? || SpamChecker.new(code).spam?
   end

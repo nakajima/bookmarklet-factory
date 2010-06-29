@@ -67,14 +67,18 @@ textarea {
 }
 
 #inject-label {
+  margin-bottom: 10px;
+}
+
+#inject-label, #private-label {
   font-size: 16px;
 }
 
-#inject-label span {
+#inject-label span, #private-label span {
   color: #aaa;
 }
 
-#jquery-warning {
+#jquery-warning, #private-warning {
   background: #ffc;
   padding: 6px;
   width: 810px;
