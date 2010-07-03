@@ -18,9 +18,6 @@ a {
   text-decoration: none;
   padding: 3px 5px;
   margin-left: -3px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
 }
 
 a:hover {
@@ -116,6 +113,12 @@ textarea {
   width: 50%;
 }
 
+#new-link a {
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+
 #source {
   font-size: 14px;
   padding: 1em;
@@ -130,19 +133,28 @@ textarea {
   float: left;
 }
 
-#the-list a {
+#the-list a, .show a {
   display: inline-block;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 
 .about {
   position: absolute;
   top: 2px;
-  right: -6px;
+  right: 0;
   font-size: 12px;
-  padding: 2px 12px 2px 6px;
+  padding: 2px 6px;
   background: #000;
   color: #fff;
   line-height: 20px;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
 
 .about:hover {

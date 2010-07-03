@@ -11,7 +11,7 @@
   <%= javascript_include_tag 'effects' %>
   <%= javascript_include_tag 'application' %>
 </head>
-<body>
+<body class="<%= controller.action_name %>">
 
 <% if flash.has_key?(:notice) %>
   <p class="flash" onclick="dismissFlash();"><%= flash[:notice] %></p>
