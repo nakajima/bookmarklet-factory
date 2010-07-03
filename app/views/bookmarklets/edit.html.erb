@@ -42,7 +42,7 @@
   <div id="private-label">
     <%= f.check_box :private, :onchange => '$("private-warning").toggle()' %>
     <%= f.label :private, 'Keep Private <span>Do not show on home page</span>', :id => 'inject-label' %>
-    <p id="private-warning" style="display:none;">
+    <p id="private-warning" style="display:<%= @bookmarklet.private? ? 'block' : 'none' %>;">
       Private bookmarklets do not appear on the home page. If you make
       your bookmarklet private, make sure you bookmark it. Heh.
     </p>
