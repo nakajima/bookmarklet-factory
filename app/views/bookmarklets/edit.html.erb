@@ -49,6 +49,8 @@
   </div>
 
   <p class="last">
-    <%= f.submit 'Save Bookmarklet', :disable_with => "Saving Bookmarklet..." %> or <%= link_to 'Back', @bookmarklet %>
+    <%= f.submit 'Save Bookmarklet', :disable_with => "Saving Bookmarklet..." %>
+     or <%= link_to 'Back', @bookmarklet %> 
+     or <%= link_to 'Delete', @bookmarklet, :method => :delete, :confirm => "Click OK to delete this bookmarklet forever." %>
   </p>
 <% end %>

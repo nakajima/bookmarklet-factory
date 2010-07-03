@@ -77,7 +77,15 @@ class BookmarkletsController < ApplicationController
   # DELETE /bookmarklets/1
   # DELETE /bookmarklets/1.xml
   def destroy
-    redirect_to Bookmarklet.find(params[:id])
+    if session[:owns].include?(params[:id])
+      @bookmarklet = Bookmarklet.find(params[:id])
+      @bookmarklet.destroy
+      flash[:notice] = 'Your bookmark has been deleted.'
+      redirect_to '/'
+    else
+      flash[:notice] = 'No dice. Try again.'
+      redirect_to :action => 'login'
+    end
   end
 
   private
